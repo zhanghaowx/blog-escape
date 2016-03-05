@@ -1,17 +1,17 @@
 # Harmony Jekyll theme general configurations 
 
 # Base URL
-baseurl: /harmony
+baseurl: /Escape
 
 # Site live URL
-url: http://gayan.me
+url: http://zhanghaowx.github.io/Escape
 
 # Localhost 
 # url: http://127.0.0.1:4000  
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
-  name: Harmony
+  name: Escape
   # Little description about your site
   description: Harmony is free responsive jekyll theme.
   # 'meta_description:' Write an awesome description for your new site here.
