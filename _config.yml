@@ -4,7 +4,7 @@
 baseurl: /Escape
 
 # Site live URL
-url: http://zhanghaowx.github.io/
+url: http://zhanghaowx.github.io
 
 # Localhost 
 # url: http://127.0.0.1:4000  
@@ -13,50 +13,49 @@ url: http://zhanghaowx.github.io/
 harmony:
   name: Escape
   # Little description about your site
-  description: Harmony is free responsive jekyll theme.
+  description: Stay hungry. Stay foolish.
   # 'meta_description:' Write an awesome description for your new site here.
   # It will appear in your document head meta (for Google search results) and 
   # in your feed.xml site description.
   meta_description: > # 
-   Harmony is a free responsive jekyll theme by Gayan Virajith
-   and Maheshika Lakmali. Sourced on Github - 
-   https://github.com/gayanvirajith/harmony
+   Hao Zhang's personal blog.
+   
   basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
   author: # Author details
-    name: Gayan Virajith
-    email: gayanvirajith@gmail.com
-    url: http://gayanvirajith.github.io
+    name: Hao Zhang
+    email: zhanghaowx@gmail.com
+    url: http://zhanghaowx.github.io
 
   # Google Analytics key, leave blank to ignore
   google_analytics_key: UA-xxxx-x
 
   # Profile links, leave blank to ignore
   social: 
-    github: gayanvirajith
-    twitter: gayanvirajith
-    facebook: gayanvirajith
-    gplus: +GayanVirajith
-    dribble: gayan
+    github: zhanghaowx
+    twitter: 
+    facebook: 
+    gplus: +haozhang88
+    dribble: 
     pinterest: 
   # Toggle disclaimer in footer
   show_disclaimer: true
 
 # Conversion / Build settings 
-markdown:    kramdown
+markdown: kramdown
 # This is how you put pygments config in jekyll 2.0 instead of pygments: true
-highlighter: pygments 
+highlighter: rouge 
 
 # Permalinks
-permalink:        pretty
+permalink: pretty
 
 exclude: 
   - CNAME
   - Gemfile
+  - Gemfile.lock
   - Rakefile
   - README.md
   - .gitignore
   - .sass-cache
-  - Gemfile.lock
 
 # Sass conversion configs
 sass:
