@@ -1,11 +1,12 @@
 ---
 layout: post
+permalink: cross-origin
+comments: true
 title:  "CORS - Cross Origin Resource Sharing"
 date:   2016-03-04 21:56:45
 description: Talks about HTTP access control(CORS).
 categories:
 - web
-permalink: cross-origin
 ---
 
 Today when I was trying to use jquery to send ajax requests to *Jenkins*, I encountered the problem of **CROS**. In order to trigger a *Jenkins* job from a webpage, I need to use **$.ajax** to send HTTP requests.
