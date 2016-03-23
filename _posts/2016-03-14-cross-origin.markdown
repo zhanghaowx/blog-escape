@@ -7,6 +7,8 @@ date:   2016-03-04 21:56:45
 description: Talks about HTTP access control(CORS).
 categories:
 - web
+- cors
+- rest
 ---
 
 Today when I was trying to use jquery to send ajax requests to *Jenkins*, I encountered the problem of **CROS**. In order to trigger a *Jenkins* job from a webpage, I need to use **$.ajax** to send HTTP requests.
@@ -15,7 +17,7 @@ Unfortunately, when I run everything inside a local web server, I got:
 
 {% highlight bash %}
 XMLHttpRequest cannot load http://www.domain-a.com.
-Origin http://www.domain-b.com is not allowed by Access-Control-Allow-Origin. 
+Origin http://www.domain-b.com is not allowed by Access-Control-Allow-Origin.
 {% endhighlight %}
 
 Where does such error come from?
