@@ -2,8 +2,8 @@
 layout: post
 permalink: cross-origin
 comments: true
-title:  "CORS - Cross Origin Resource Sharing"
-date:   2016-03-04 21:56:45
+title: "CORS - Cross Origin Resource Sharing"
+date: 2016-03-04 21:56:45
 description: Talks about HTTP access control(CORS).
 categories:
 - web
