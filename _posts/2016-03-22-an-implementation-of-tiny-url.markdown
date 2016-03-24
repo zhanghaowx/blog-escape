@@ -90,7 +90,7 @@ We can use [Distributed Database](https://en.wikipedia.org/wiki/Distributed_data
 
 Alternatively, we can use Distributed Key-Value Datastore.
 Some distributed datastore (e.g. [Amazon's Dynamo](https://www.youtube.com/watch?v=oz-7wJJ9HZ0)) uses Consistent Hashing to hash servers and inputs into integers and locate the corresponding server using the hash value of the input. We can apply base conversion algorithm on the hash value of the input.
-![How Consistent Hashing works]({{ site.url }}/{{ site.baseurl }}/assets/images/posts/tiny-url-consist-hashing-1.gif)
+![How Consistent Hashing works]({{ site.baseurl | prepend: site.url }}/assets/images/posts/tiny-url-consist-hashing-1.gif)
 
 #### Insert
 1. Hash an input long url into a single integer;
@@ -105,7 +105,7 @@ Some distributed datastore (e.g. [Amazon's Dynamo](https://www.youtube.com/watch
 # Improvements
 
 ## Database Storage: Virtual Replicas
-![Virtual Replicas of Caches]({{ site.url }}/{{ site.baseurl }}/assets/images/posts/tiny-url-consist-hashing-2.gif)
+![Virtual Replicas of Caches]({{ site.baseurl | prepend: site.url }}/assets/images/posts/tiny-url-consist-hashing-2.gif)
 
 ## Response Speed: Server-side Cache
 Use [server-side caches](http://www.computerweekly.com/opinion/Server-side-flash-cache-pros-outweigh-the-cons-for-many) of hottest URLs can speed up the app.
