@@ -25,8 +25,9 @@ To implement a TinyUrl service we need:
 # URL Mapping Algorithm
 Suppose we have a database which contains three columns:
 
+|-------------------+----------------------------------+-----------|
 |id (auto increment)|actual url                        |shorten url|
-|-------------------|----------------------------------|-----------|
+|:-----------------:|:--------------------------------:|:---------:|
 |0                  |http://example.com/i-am-a-long-url|abcdef     |
 
 Intuitively, we can design a hash function that maps the actual url to shorten url. But string to string mapping is not easy to compute.
