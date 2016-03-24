@@ -1,6 +1,6 @@
 # Escape
 
-Escape is a responsive jekyll theme based on [Harmony](#harmony).
+Escape is a responsive jekyll theme based on [Harmony](https://github.com/gayanvirajith/harmony).
 
 - Built for jekyll 2.x
 - Supports Google analytics and RSS feeds
@@ -10,7 +10,6 @@ Escape is a responsive jekyll theme based on [Harmony](#harmony).
 
 ## Contents
 
-- [Harmony](#harmony)
 - [About Jekyll](#about-jekyll)
 - [How to install/run](#how-to-installrun)
 - [Options/Usage](#optionsusage)
