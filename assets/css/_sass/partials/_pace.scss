@@ -1,0 +1,126 @@
+// Import custom mixins
+@import "partials/mixins";
+
+/**
+ * Styles for pace.js
+ */
+
+body >:not(.pace),
+body:before,
+body:after {
+    @include transition(opacity .4s ease-in-out);
+}
+
+body:not(.pace-done) >:not(.pace),
+body:not(.pace-done):before,
+body:not(.pace-done):after {
+    opacity: 0;
+}
+
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    color: #000;
+    @include user-select(none);
+}
+
+.pace-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 50%;
+    left: 50%;
+    margin-left: -2.5rem;
+    margin-top: -2.5rem;
+    height: 5rem;
+    width: 5rem;
+    opacity: 1;
+    @include transition(opacity .1s);
+    @include transform(translate3d(0, 0, 0)!important);
+}
+
+.pace-inactive .pace-progress,
+.pace-progress[data-progress="00"] {
+    opacity: 0;
+}
+
+.pace-progress:after {
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    content: attr(data-progress);
+    display: block;
+    font-size: 1.8rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+.pace-progress .pace-progress-inner {
+    overflow: hidden;
+    position: absolute;
+    width: 2.5rem;
+    height: 5rem;
+    left: 2.5rem;
+    top: 0;
+    -webkit-transition: -webkit-transform .1s;
+    transition: transform .1s;
+    @include transform-origin(left center);
+}
+
+.pace-progress .pace-progress-inner:after,
+.pace-progress .pace-progress-inner:before {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    content: ' ';
+    left: -2.5rem;
+    top: 0;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 5rem
+}
+
+.pace-progress .pace-progress-inner:before {
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    @include transform(rotate(135deg));
+}
+
+.pace-progress .pace-progress-inner:after {
+    border-left-color: transparent;
+    border-top-color: transparent;
+    display: none;
+
+    @include transform(rotate(315deg));
+}
+
+@for $i from 0 through 100 {
+    $progress: $i;
+    @if $i < 10 {
+        $progress: "0" + $i;
+    }
+
+    @if $i <= 50 {
+        $deg: round(3.6 * $i - 45) + deg;
+
+        .pace-progress[data-progress="#{$progress}"] .pace-progress-inner:before {
+            @include transform(rotate($deg));
+        }
+    }
+
+    @if $i >= 50 {
+        $deg: round(3.6 * $progress + 135) + deg;
+
+        .pace-progress[data-progress="#{$progress}"] .pace-progress-inner:after {
+            @include transform(rotate($deg));
+            display: block;
+        }
+    }
+
+    $deg: round(3.6 * $i) + deg;
+
+    .pace-progress[data-progress="#{$progress}"] .pace-progress-inner {
+        @include transform(rotate($deg));
+        overflow: visible;
+    }
+}

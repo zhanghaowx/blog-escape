@@ -9,11 +9,18 @@
     <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.harmony.meta_description }}{% endif %}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
     <!-- Harmony styles -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css">
 
     <!-- Modernizr js -->
     <script async src="{{ site.baseurl }}/assets/js/modernizr.js"></script>
+
+    <!-- Pace js -->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+
 
     <!-- IE Fixes -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
