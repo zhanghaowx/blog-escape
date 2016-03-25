@@ -1,6 +1,7 @@
 # Released MIT License (MIT)
 
-Copyright (c) 2013 webcreate.lk - Gayan Virajith
+Copyright (c) 2016 - Hao Zhang
+Copyright (c) 2013 - Gayan Virajith
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
