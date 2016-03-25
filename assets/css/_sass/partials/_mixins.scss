@@ -15,6 +15,14 @@
     box-sizing: $box;
 }
 
+@mixin filter($args...) {
+    -webkit-filter: $args;
+    -moz-filter: $args;
+    -o-filter: $args;
+    -ms-filter: $args;
+    filter: $args;
+}
+
 @mixin transition($args...) {
     -webkit-transition: $args;
     -moz-transition: $args;
