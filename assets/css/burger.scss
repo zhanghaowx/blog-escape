@@ -2,8 +2,8 @@
 ---
 
 $color-stack:
-  (group: primary, id: normal, color: #2196f3),
-  (group: complement, id: normal, color: #fff);
+  (group: primary, id: normal, color: #fff),
+  (group: complement, id: normal, color: #000);
 
 @function color($group, $shade:normal, $transparency:1) {
   @each $color in $color-stack {
@@ -129,6 +129,7 @@ body {
 .b-link {
   background: transparent;
   border-left: color(complement, normal, 0) solid $b-border-width;
+  border-bottom: none !important;
   color: color(complement) !important;
   font-family: $b-font-family;
   font-size: $b-font-size;
