@@ -2,20 +2,19 @@
 ---
 
 // Import reset
-@import "partials/reset";
+@import "reset";
 
 // Import colors, fonts etc...
-@import "partials/variables";
+@import "variables";
 
 // Import custom mixins
-@import "partials/mixins";
+@import "mixins";
 
 // Import layout mixin
-@import "partials/layout";
+@import "layout";
 
 // Import syntax
-@import "partials/syntax";
-
+@import "syntax";
 
 /* --------------------------------
 
