@@ -39,6 +39,8 @@ harmony:
     pinterest:
   # Toggle disclaimer in footer
   show_disclaimer: false
+  # Toggle page load indicator by pace.js
+  show_page_load: true
 
 # Conversion / Build settings
 markdown: kramdown
@@ -59,5 +61,5 @@ exclude:
 
 # Sass conversion configs
 sass:
-    sass_dir: assets/css/_sass
-    style: :compressed
+  sass_dir: assets/css/_sass
+  style: :compressed
