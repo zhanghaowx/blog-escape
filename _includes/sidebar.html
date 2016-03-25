@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/burger.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/burger.css">
 
 <!-- Navigation -->
 <div class="b-nav">
@@ -28,7 +28,7 @@
         var burgerNav = document.getElementsByClassName('b-nav')[0];
 
         burgerMenu.addEventListener('click', function toggleClasses() {
-    [body, burgerContain, burgerNav].forEach(function (el) {
+            [body, burgerContain, burgerNav].forEach(function (el) {
                 el.classList.toggle('open');
             });
         }, false);
