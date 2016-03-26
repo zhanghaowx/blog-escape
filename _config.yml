@@ -41,6 +41,8 @@ harmony:
   show_disclaimer: false
   # Toggle page load indicator by pace.js
   show_page_load: true
+  # Toggle page background by particles.js
+  show_particles_background: true
 
 # Conversion / Build settings
 markdown: kramdown
