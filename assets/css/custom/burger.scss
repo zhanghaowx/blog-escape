@@ -162,7 +162,10 @@ body {
   z-index: 12;
 
   &:hover {
-    border: color(complement) solid $b-border-width;
+    -moz-box-shadow: 0px 0px 10px #ffffff;
+    -webkit-box-shadow: 0px 0px 10px #ffffff;
+    box-shadow: 0px 0px 10px #ffffff;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
   }
 }
 

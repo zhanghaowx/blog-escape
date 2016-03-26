@@ -38,12 +38,16 @@ harmony:
     gplus: +haozhang88
     dribble:
     pinterest:
+
   # Toggle disclaimer in footer
   show_disclaimer: false
   # Toggle page load indicator by pace.js
-  show_page_load: true
+  show_page_load: false
   # Toggle page background by particles.js
   show_particles_background: true
+
+  post:
+    timeline: false
 
 # Conversion / Build settings
 markdown: kramdown
