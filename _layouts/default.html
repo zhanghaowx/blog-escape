@@ -9,14 +9,19 @@
     <meta name="description" content="{% if page.meta_description %}{{ page.meta_description }}{% else %}{{ site.harmony.meta_description }}{% endif %}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    {% if site.harmony.google_font_delay_load == false %}
+    <!-- custom font -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono&amp;subset=latin">
+    {% endif %}
+
     <!-- Harmony styles -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css">
 
     <!-- Animate.css -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/externals/animate.css/animate.min.css">
 
-    <!-- Pace js -->
     {% if site.harmony.show_page_load %}
+    <!-- Pace js -->
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/pace.css">
     <script async src="{{ site.baseurl }}/assets/externals/pace/pace.min.js"></script>
     {% endif %}
@@ -56,6 +61,7 @@
             {% include footer.html %}
         </p>
     </footer>
+    {% if site.harmony.google_font_delay_load %}
     <script type="text/javascript">
         /* To avoid render blocking css */
         var cb = function () {
@@ -72,6 +78,7 @@
         else
             window.addEventListener('load', cb);
     </script>
+    {% endif %}
     <!-- jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- When no internet load JQuery from local -->
