@@ -47,7 +47,7 @@ harmony:
   show_particles_background: true
 
   post:
-    timeline: false
+    timeline: true
 
 # Conversion / Build settings
 markdown: kramdown

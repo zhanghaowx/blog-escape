@@ -1,16 +1,25 @@
 ---
 ---
-
 /*
  * Override styles in main.scss
  */
+
 .wc-container {
     max-width: 100%;
 }
 
 div.page-content-bg {
-  background-color: #efefef;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+    background: rgb(255, 255, 255);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
 
 /* --------------------------------
 
@@ -110,21 +119,25 @@ Modules - reusable parts of our design
     box-shadow: 0 0 0 8px #2ba3df;
     color: #ffffff;
 }
+
 .cd-timeline-img.primary {
     background: #0aa699;
     box-shadow: 0 0 0 8px #33b5aa;
     color: #ffffff;
 }
+
 .cd-timeline-img.warning {
     background: #fbb05e;
     box-shadow: 0 0 0 8px #fcbd79;
     color: #ffffff;
 }
+
 .cd-timeline-img.danger {
     background: #f35958;
     box-shadow: 0 0 0 8px #455a70;
     color: #ffffff;
 }
+
 .cd-timeline-img.info {
     background: #1f3853;
     box-shadow: 0 0 0 8px #455a70;
@@ -245,10 +258,7 @@ Modules - reusable parts of our design
 
 .cd-timeline-content .cd-read-more {
     float: right;
-    padding: .8em 1em;
-    background: #acb7c0;
-    color: white;
-    border-radius: 0.25em;
+    margin: 0 1em;
 }
 
 .no-touch .cd-timeline-content .cd-read-more:hover {
@@ -257,7 +267,7 @@ Modules - reusable parts of our design
 
 .cd-timeline-content .cd-date {
     float: left;
-    padding: .8em 0;
+    padding: 0;
     opacity: .7;
 }
 
@@ -301,7 +311,7 @@ Modules - reusable parts of our design
         border-left-color: white;
     }
     .cd-timeline-content .cd-read-more {
-        float: left;
+        float: right;
     }
     .cd-timeline-content .cd-date {
         position: absolute;
