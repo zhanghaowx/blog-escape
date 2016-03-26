@@ -50,11 +50,16 @@
 </head>
 
 <body class="{{ site.harmony.basetheme }}">
-    {% include sidebar.html %}
     <header class="main-header">
+        {% if site.harmony.layout.sidebar %}
+            {% include sidebar.html %}
+        {% endif %}
         <div class="wc-container">
             <h1><a href="{{ site.baseurl }}/">{{ site.harmony.name }}</a></h1>
-            <h2>{{ site.harmony.description }}</h2> {% include header-links.html %}
+                <h2>{{ site.harmony.description }}</h2>
+                {% if site.harmony.layout.sidebar == false %}
+                    {% include header-links.html %}
+                {% endif %}
         </div>
     </header>
     <div id="particles-js" class="page-content-bg"></div>

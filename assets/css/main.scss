@@ -480,8 +480,8 @@ div.page-content {
   margin-left: 0;
 }
 
-// Theme base 01
-body.theme-base-01 {
+// Theme base default
+body.theme-base-default {
 
   a {
     @extend .default-anchor;
@@ -502,8 +502,6 @@ body.theme-base-01 {
   div.page-content {
     h1, h2, h3, h4, h5, h6 { color: $base-01; }
   }
-
-
 }
 
 /* --------------------------------

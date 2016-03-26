@@ -20,7 +20,7 @@ harmony:
   meta_description: > #
    Hao Zhang's personal blog.
 
-  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
+  basetheme: theme-base-default # pre defined themes are darken, blue-water, redish.
   author: # Author details
     name: Hao Zhang
     email: zhanghaowx@gmail.com
@@ -45,6 +45,9 @@ harmony:
   show_page_load: false
   # Toggle page background by particles.js
   show_particles_background: true
+
+  layout:
+    sidebar: true
 
   post:
     timeline: true

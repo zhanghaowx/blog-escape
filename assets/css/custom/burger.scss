@@ -1,6 +1,10 @@
 ---
 ---
 
+/**
+ * Styles for sidebar
+ */
+
 $color-stack:
   (group: primary, id: normal, color: #fff),
   (group: complement, id: normal, color: #000);
@@ -136,7 +140,7 @@ body {
   font-weight: $b-font-weight;
   margin-left: $b-margin-left;
   text-decoration: none;
-  transition: $b-transition;
+  transition: $b-transition !important;
   width: auto;
 
   &:hover,
