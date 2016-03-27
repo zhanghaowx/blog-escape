@@ -200,12 +200,6 @@ body {
   z-index: 13;
 }
 
-body.is-animating {
-  .b-container {
-    opacity: 0;
-  }
-}
-
 .b-container {
   @include vendor('transition', 'opacity 2.0s ease');
   @include vendor('transition-delay', '1.0s');
@@ -214,7 +208,6 @@ body.is-animating {
   left: $b-margin-left;
   position: absolute;
   top: $b-margin-top;
-  opacity: 1;
 
   &:hover:not(.open) {
     .bun-top,
