@@ -11,6 +11,7 @@ url: http://zhanghaowx.github.io
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
+  # Webpage title
   name: "&lt;Escape /&gt;"
   # Little description about your site
   description: Stay hungry. Stay foolish.
@@ -41,10 +42,13 @@ harmony:
 
   # Toggle disclaimer in footer
   show_disclaimer: false
-  # Toggle page load indicator by pace.js
-  show_page_load: false
   # Toggle page background by particles.js
   show_particles_background: true
+
+  # Choose page load indicator's theme by pace.js
+  # Look at files assets/css/custom/pace-*.scss for possible values
+  # Leave empty if don't want pace.js
+  pace_theme:
 
   layout:
     sidebar: true
