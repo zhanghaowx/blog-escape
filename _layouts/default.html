@@ -50,10 +50,10 @@
 </head>
 
 <body class="{{ site.harmony.basetheme }}">
+    {% if site.harmony.layout.sidebar %}
+        {% include sidebar.html %}
+    {% endif %}
     <header class="main-header">
-        {% if site.harmony.layout.sidebar %}
-            {% include sidebar.html %}
-        {% endif %}
         <div class="wc-container">
             <h1><a href="{{ site.baseurl }}/">{{ site.harmony.name }}</a></h1>
                 <h2>{{ site.harmony.description }}</h2>
