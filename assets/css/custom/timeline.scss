@@ -1,6 +1,9 @@
 ---
 ---
-$bg-color: rgba(255, 255, 255, 0.75);
+
+@import "skel";
+
+$bg-color: rgba(255, 255, 255, 0.9);
 
 /*
  * Override styles in main.scss
@@ -149,9 +152,7 @@ Modules - reusable parts of our design
     }
     .cd-timeline-img.bounce-in {
         visibility: visible;
-        -webkit-animation: cd-bounce-1 0.6s;
-        -moz-animation: cd-bounce-1 0.6s;
-        animation: cd-bounce-1 0.6s;
+        @include vendor('animation', 'cd-bounce-1 0.6s');
     }
 }
 

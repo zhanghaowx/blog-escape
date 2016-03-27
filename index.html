@@ -1,6 +1,15 @@
 ---
 layout: default
+header: none
 ---
+<!-- Banner -->
+<section class="banner">
+    <div class="inner">
+        <h2>{{ site.harmony.name }}</h2>
+        <p>{{ site.harmony.description }}</p>
+    </div>
+    <a href="#" class="more scrolly">Read More</a>
+</section>
 <div id="home" class="page-content wc-container">
     {% if site.harmony.post.timeline %}
         {% include post-timeline.html %}

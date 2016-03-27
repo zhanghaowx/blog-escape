@@ -27,7 +27,6 @@
     <!-- Pace js -->
     {% if site.harmony.pace_theme %}
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/pace/pace-{{ site.harmony.pace_theme }}.css">
-    <script async src="{{ site.baseurl }}/assets/externals/pace/pace.min.js"></script>
     {% endif %}
 
     <!-- Modernizr js -->
@@ -48,6 +47,7 @@
     {% if site.harmony.layout.sidebar %}
         {% include sidebar.html %}
     {% endif %}
+    {% if page.header != "none" %}
     <header class="main-header">
         <div class="wc-container">
             <h1><a href="{{ site.baseurl }}/">{{ site.harmony.name }}</a></h1>
@@ -57,6 +57,7 @@
                 {% endif %}
         </div>
     </header>
+    {% endif %}
     <div id="particles-js" class="page-content-bg"></div>
     {{ content }}
     <footer class="main-footer">
@@ -79,10 +80,16 @@
         window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/externals/jquery/jquery.min.js"><\/script>')
     </script>
     <!-- Site js -->
+
+    {% if site.harmony.pace_theme %}
+    <script async src="{{ site.baseurl }}/assets/externals/pace/pace.min.js"></script>
+    {% endif %}
+
     {% if site.harmony.show_particles_background %}
     <script src="{{ site.baseurl }}/assets/externals/particles/particles.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/custom/particles.js"></script>
     {% endif %}
+
     <script src="{{ site.baseurl }}/assets/js/all.js"></script>
 
     <!-- Google analytics  -->

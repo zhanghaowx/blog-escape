@@ -1,0 +1,148 @@
+---
+---
+// Import custom mixins
+@import "mixins";
+
+// Import from skel.io
+@import "skel";
+
+$color-bg: #21b2a6;
+$color-primary: #ffffff;
+$letter-spacing-alt: 0.225em;
+
+/* Banner */
+body {
+    &.is-animating {
+        *, *:before, *:after {
+            @include vendor('animation', 'none !important');
+            @include vendor('transition', 'none !important');
+        }
+    }
+}
+.banner {
+    @include vendor('display', 'flex');
+    @include vendor('flex-direction', 'column');
+    @include vendor('justify-content', 'center');
+    cursor: default;
+    height: 100vh;
+    min-height: 35em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    h2 {
+        @include vendor('transform', 'scale(1)');
+        @include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
+        display: inline-block;
+        color: $color-primary !important;
+        font-size: 1.75em;
+        padding: 0.35em 1em;
+        margin: 0 0 1em 0;
+        position: relative;
+        &:before,
+        &:after {
+            @include vendor('transition', 'width 0.85s ease');
+            @include vendor('transition-delay', '0.25s');
+            background: $color-primary;
+            content: '';
+            display: block;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+        }
+        &:before {
+            top: 0;
+            left: 0;
+        }
+        &:after {
+            bottom: 0;
+            right: 0;
+        }
+    }
+    p {
+        @include vendor('transition', 'opacity 2.0s ease');
+        @include vendor('transition-delay', '1.5s');
+        color: $color-primary;
+        letter-spacing: $letter-spacing-alt;
+        text-transform: uppercase;
+        a {
+            color: inherit;
+        }
+    }
+    .more {
+        @include vendor('transition', ('transform 0.75s ease', 'opacity 0.75s ease'));
+        @include vendor('transition-delay', '3.5s');
+        @include vendor('transform', 'translateY(0)');
+        border: none;
+        bottom: 0;
+        color: inherit;
+        font-size: 0.8em;
+        height: 8.5em;
+        left: 50%;
+        letter-spacing: $letter-spacing-alt;
+        margin-left: -8.5em;
+        opacity: 1;
+        outline: 0;
+        padding-left: $letter-spacing-alt;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        width: 16em;
+        z-index: 1;
+        &:after {
+            background-image: url('./images/arrow.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            bottom: 4em;
+            content: '';
+            display: block;
+            height: 1.5em;
+            left: 50%;
+            margin: 0 0 0 -0.75em;
+            position: absolute;
+            width: 1.5em;
+        }
+    }
+    &:after {
+        @include vendor('pointer-events',
+        'none');
+        @include vendor('transition',
+        'opacity 3s ease-in-out');
+        @include vendor('transition-delay',
+        '1.25s');
+        content: '';
+        z-index: -1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+}
+
+body.is-animating {
+    .banner {
+        h2 {
+            @include vendor('transform',
+            'scale(0.95)');
+            opacity: 0;
+            &:before,
+            &:after {
+                width: 0;
+            }
+        }
+        p {
+            opacity: 0;
+        }
+        .more {
+            @include vendor('transform',
+                'translateY(8.5em)');
+            opacity: 0;
+        }
+        &:after {
+            opacity: 1;
+        }
+    }
+}

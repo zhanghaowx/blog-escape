@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "skel";
+
 /**
  * Styles for sidebar
  */
@@ -20,8 +22,8 @@ $color-stack:
 }
 
 $b-height: 60px; //Height (and width) of the burger menu
-$b-margin-top: 30px; //Burger menu margin (distance from top)
-$b-margin-left: 30px; //Burger menu margin (distance from left)
+$b-margin-top: 20px; //Burger menu margin (distance from top)
+$b-margin-left: 20px; //Burger menu margin (distance from left)
 $b-border-width: 2px; //Width of the borders and 'buns'
 $b-bun-width: 25px; //Width of the 'buns'
 $b-bun-height: $b-border-width; //Height of the 'buns'
@@ -198,11 +200,21 @@ body {
   z-index: 13;
 }
 
+body.is-animating {
+  .b-container {
+    opacity: 0;
+  }
+}
+
 .b-container {
+  @include vendor('transition', 'opacity 2.0s ease');
+  @include vendor('transition-delay', '1.0s');
+
   height: $b-height;
   left: $b-margin-left;
   position: absolute;
   top: $b-margin-top;
+  opacity: 1;
 
   &:hover:not(.open) {
     .bun-top,
