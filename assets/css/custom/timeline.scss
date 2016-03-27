@@ -1,5 +1,7 @@
 ---
 ---
+$bg-color: rgba(255, 255, 255, 0.75);
+
 /*
  * Override styles in main.scss
  */
@@ -210,10 +212,10 @@ Modules - reusable parts of our design
 .cd-timeline-content {
     position: relative;
     margin-left: 60px;
-    background: white;
+    background: $bg-color;
     border-radius: 0.25em;
     padding: 1em;
-    box-shadow: 0 3px 0 #ffffff;
+    box-shadow: 0 3px 0 $bg-color;
 }
 
 .cd-timeline-content:after {
@@ -253,7 +255,6 @@ Modules - reusable parts of our design
 }
 
 .cd-timeline-content .cd-date {
-    color: white;
     float: left;
     padding: 0;
     opacity: .7;
@@ -267,7 +268,7 @@ Modules - reusable parts of our design
     height: 0;
     width: 0;
     border: 7px solid transparent;
-    border-right: 7px solid white;
+    border-right: 7px solid $bg-color;
 }
 
 @media only screen and (min-width: 768px) {
@@ -296,7 +297,7 @@ Modules - reusable parts of our design
         top: 24px;
         left: 100%;
         border-color: transparent;
-        border-left-color: white;
+        border-left-color: $bg-color;
     }
     .cd-timeline-content .cd-read-more {
         float: right;
@@ -317,7 +318,7 @@ Modules - reusable parts of our design
         left: auto;
         right: 100%;
         border-color: transparent;
-        border-right-color: white;
+        border-right-color: $bg-color;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
         float: right;
