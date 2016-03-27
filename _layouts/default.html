@@ -12,11 +12,6 @@
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-    {% if site.harmony.google_font_delay_load == false %}
-    <!-- custom font -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono&amp;subset=latin">
-    {% endif %}
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
 
@@ -77,24 +72,6 @@
             {% include footer.html %}
         </p>
     </footer>
-    {% if site.harmony.google_font_delay_load %}
-    <script type="text/javascript">
-        /* To avoid render blocking css */
-        var cb = function () {
-            var l = document.createElement('link');
-            l.rel = 'stylesheet';
-            l.href = 'http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin';
-            var h = document.getElementsByTagName('head')[0];
-            h.parentNode.insertBefore(l, h);
-        };
-        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-            webkitRequestAnimationFrame || msRequestAnimationFrame;
-        if (raf)
-            raf(cb);
-        else
-            window.addEventListener('load', cb);
-    </script>
-    {% endif %}
     <!-- jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- When no internet load JQuery from local -->
