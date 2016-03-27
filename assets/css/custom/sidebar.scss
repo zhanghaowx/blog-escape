@@ -1,9 +1,15 @@
 ---
 ---
 
+@import "skel";
+
+/**
+ * Styles for sidebar
+ */
+
 $color-stack:
   (group: primary, id: normal, color: #fff),
-  (group: complement, id: normal, color: #000);
+  (group: bg, id: normal, color: #4686a0);
 
 @function color($group, $shade:normal, $transparency:1) {
   @each $color in $color-stack {
@@ -16,8 +22,8 @@ $color-stack:
 }
 
 $b-height: 60px; //Height (and width) of the burger menu
-$b-margin-top: 30px; //Burger menu margin (distance from top)
-$b-margin-left: 30px; //Burger menu margin (distance from left)
+$b-margin-top: 20px; //Burger menu margin (distance from top)
+$b-margin-left: 20px; //Burger menu margin (distance from left)
 $b-border-width: 2px; //Width of the borders and 'buns'
 $b-bun-width: 25px; //Width of the 'buns'
 $b-bun-height: $b-border-width; //Height of the 'buns'
@@ -65,17 +71,17 @@ $b-pad-top: ($b-height / 2 - $b-bun-width-half); //Vertically centers bun in men
 
 body {
   &:after {
-    background: color(primary);
+    background: color(bg);
     content: '';
-    height: 100%;
+    top: 0;
     left: 0;
+    padding: 0;
     opacity: 0;
     overflow: hidden;
-    padding: 0;
     position: absolute;
-    top: 0;
     visibility: hidden;
     transition: $b-transition;
+    height: 100%;
     width: 100%;
   }
 
@@ -98,7 +104,7 @@ body {
   }
 
   li {
-    color: color(complement);
+    color: color(primary);
     list-style-type: none;
     padding: 10px;
     text-align: left;
@@ -128,46 +134,37 @@ body {
 
 .b-link {
   background: transparent;
-  border-left: color(complement, normal, 0) solid $b-border-width;
+  border-left: color(primary, normal, 0) solid $b-border-width;
   border-bottom: none !important;
-  color: color(complement) !important;
+  color: color(primary) !important;
   font-family: $b-font-family;
   font-size: $b-font-size;
   font-weight: $b-font-weight;
   margin-left: $b-margin-left;
   text-decoration: none;
-  transition: $b-transition;
+  transition: $b-transition !important;
   width: auto;
 
   &:hover,
   &--active {
-    border-left: color(complement) solid $b-border-width;
+    border-left: color(primary) solid $b-border-width;
     padding-left: $b-txt-pad;
   }
 }
 
 .b-menu {
-  background: color(primary);
-  border: color(primary) solid $b-border-width;
-  border-radius: $b-border-radius;
   cursor: pointer;
   display: inline-block;
   height: $b-height;
-  padding-left: $b-pad-left;
-  padding-top: $b-pad-top;
+  width: $b-height;
   position: relative;
   transition: $b-transition;
   user-select: none;
-  width: $b-height;
   z-index: 12;
-
-  &:hover {
-    border: color(complement) solid $b-border-width;
-  }
 }
 
 .b-bun {
-  background: color(complement);
+  background: color(primary);
   position: relative;
   transition: $b-transition;
 
@@ -204,6 +201,9 @@ body {
 }
 
 .b-container {
+  @include vendor('transition', 'opacity 2.0s ease');
+  @include vendor('transition-delay', '1.0s');
+
   height: $b-height;
   left: $b-margin-left;
   position: absolute;
@@ -219,11 +219,11 @@ body {
 
   &.open {
     .b-main {
-      border: color(complement) solid $b-border-width;
+      border: color(primary) solid $b-border-width;
     }
 
     .b-bun--top {
-      background: color(complement);
+      background: color(primary);
       top: 9px;
       transform: rotate(45deg);
     }
@@ -233,13 +233,13 @@ body {
     }
 
     .b-bun--bottom {
-      background: color(complement);
+      background: color(primary);
       top: 5px;
       transform: rotate(-45deg);
     }
 
     .b-brand {
-      color: color(complement);
+      color: color(primary);
     }
   }
 }

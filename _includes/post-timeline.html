@@ -1,0 +1,71 @@
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/timeline.css">
+
+<section id="cd-timeline" class="cd-container">
+    {% for post in site.posts limit:10 %}
+    <div class="cd-timeline-block">
+        <div class="cd-timeline-img {% if post.color %}{{ post.color }}{% else %}blue{% endif %}">
+            <i class="fa fa-{% if post.font-awesome %}{{ post.font-awesome }}{% else %}comments{% endif %}"></i>
+        </div>
+        <!-- cd-timeline-img -->
+
+        <div class="cd-timeline-content">
+            <h2>{{ post.title }}</h2>
+            {% if post.categories.size > 0 %}
+            <div class="cd-categories">
+                {% for category in post.categories %}
+                <label class="label label-default">{{ category }}</label>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <p>{{ post.excerpt }}</p>
+            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" class="cd-read-more">Read more</a>
+            <span class="cd-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+        <!-- cd-timeline-content -->
+    </div>
+    <!-- cd-timeline-block -->
+    {% endfor %}
+</section>
+<!-- cd-timeline -->
+<script type="text/javascript">
+    /* defer until jquery is loaded */
+    function defer(method) {
+        if (window.jQuery)
+            method();
+        else
+            setTimeout(function () {
+                defer(method)
+            }, 50);
+    }
+
+    defer(function () {
+        $(document).ready(function () {
+            var timelineBlocks = $('.cd-timeline-block');
+            var offset = 0.8;
+
+            //hide timeline blocks which are outside the viewport
+            hideBlocks(timelineBlocks, offset);
+
+            //on scolling, show/animate timeline blocks when enter the viewport
+            $(window).on('scroll', function () {
+                (!window.requestAnimationFrame) ? setTimeout(function () {
+                    showBlocks(timelineBlocks, offset);
+                }, 100): window.requestAnimationFrame(function () {
+                    showBlocks(timelineBlocks, offset);
+                });
+            });
+
+            function hideBlocks(blocks, offset) {
+                blocks.each(function () {
+                    ($(this).offset().top > $(window).scrollTop() + $(window).height() * offset) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+                });
+            }
+
+            function showBlocks(blocks, offset) {
+                blocks.each(function () {
+                    ($(this).offset().top <= $(window).scrollTop() + $(window).height() * offset && $(this).find('.cd-timeline-img').hasClass('is-hidden')) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+                });
+            }
+        });
+    });
+</script>

@@ -1,11 +1,11 @@
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/burger.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/sidebar.css">
 
 <!-- Navigation -->
 <div class="b-nav">
-    <li><a class="b-link" href="#">Home</a></li>
+    <li><a class="b-link" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">Home</a></li>
     <li><a class="b-link" href="#">Search</a></li>
-    <li><a class="b-link" href="#">Blog</a></li>
-    <li><a class="b-link" href="#">About</a></li>
+    <li><a class="b-link" href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a></li>
+    <li><a class="b-link" href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a></li>
 </div>
 
 <!-- Burger-Icon -->
