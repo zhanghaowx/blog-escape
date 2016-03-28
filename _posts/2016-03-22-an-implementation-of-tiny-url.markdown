@@ -5,6 +5,7 @@ comments: true
 title: "An Implementation of Tiny URL"
 date: 2016-03-22 20:10:00
 description: Talks about technologies behiend tinyurl.com
+font-awesome: sitemap
 categories:
 - web
 - tinyurl
