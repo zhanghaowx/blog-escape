@@ -3,7 +3,7 @@
 <section id="cd-timeline" class="cd-container">
     {% for post in site.posts limit:10 %}
     <div class="cd-timeline-block">
-        <div class="cd-timeline-img {% if post.color %}{{ post.color }}{% else %}blue{% endif %}">
+        <div class="cd-timeline-img color{{ forloop.index }}">
             <i class="fa fa-{% if post.font-awesome %}{{ post.font-awesome }}{% else %}comments{% endif %}"></i>
         </div>
         <!-- cd-timeline-img -->
