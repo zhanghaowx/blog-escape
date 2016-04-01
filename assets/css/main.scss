@@ -411,15 +411,13 @@ div.page-content {
   }
   ol {
     @include font-size(12px);
-    // padding-top: 1em;
     padding-bottom: 1em;
     list-style: decimal;
     margin-left: 0;
     li {
       color: $color-2;
       line-height: 1.6;
-      padding: 0 0 5px 0px;
-      margin-left: 2em;
+      margin-left: 1em;
       position:relative;
     }
     @include MQ(M){
