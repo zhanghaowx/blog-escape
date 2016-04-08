@@ -109,31 +109,26 @@ Modules - reusable parts of our design
 .cd-timeline-img.color0 {
     background: #0090d9;
     box-shadow: 0 0 0 8px #2ba3df;
-    color: #ffffff;
 }
 
 .cd-timeline-img.color1 {
     background: #0aa699;
     box-shadow: 0 0 0 8px #33b5aa;
-    color: #ffffff;
 }
 
 .cd-timeline-img.color2 {
     background: #fbb05e;
     box-shadow: 0 0 0 8px #fcbd79;
-    color: #ffffff;
 }
 
 .cd-timeline-img.color3 {
     background: #f35958;
     box-shadow: 0 0 0 8px #ff6e6e;
-    color: #ffffff;
 }
 
 .cd-timeline-img.color4 {
     background: #1f3853;
     box-shadow: 0 0 0 8px #455a70;
-    color: #ffffff;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -150,63 +145,9 @@ Modules - reusable parts of our design
     .cd-timeline-img.is-hidden {
         visibility: hidden;
     }
-    .cd-timeline-img.bounce-in {
+    .cd-timeline-img.slide-in {
         visibility: visible;
-        @include vendor('animation', 'cd-bounce-1 0.6s');
-    }
-}
-
-@-webkit-keyframes cd-bounce-1 {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(0.5);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: scale(1.2);
-    }
-    100% {
-        -webkit-transform: scale(1);
-    }
-}
-
-@-moz-keyframes cd-bounce-1 {
-    0% {
-        opacity: 0;
-        -moz-transform: scale(0.5);
-    }
-    60% {
-        opacity: 1;
-        -moz-transform: scale(1.2);
-    }
-    100% {
-        -moz-transform: scale(1);
-    }
-}
-
-@keyframes cd-bounce-1 {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(0.5);
-        -moz-transform: scale(0.5);
-        -ms-transform: scale(0.5);
-        -o-transform: scale(0.5);
-        transform: scale(0.5);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-    100% {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
-        transform: scale(1);
+        @include vendor('animation', 'cd-slide-1 0.6s');
     }
 }
 
@@ -332,127 +273,57 @@ Modules - reusable parts of our design
     .cd-timeline-content.is-hidden {
         visibility: hidden;
     }
-    .cd-timeline-content.bounce-in {
+    .cd-timeline-content.slide-in {
         visibility: visible;
-        -webkit-animation: cd-bounce-2 0.6s;
-        -moz-animation: cd-bounce-2 0.6s;
-        animation: cd-bounce-2 0.6s;
+        @include vendor('animation', 'cd-slide-2 0.6s');
     }
 }
 
 @media only screen and (min-width: 1170px) {
-    /* inverse bounce effect on even content blocks */
-    .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
-        -webkit-animation: cd-bounce-2-inverse 0.6s;
-        -moz-animation: cd-bounce-2-inverse 0.6s;
-        animation: cd-bounce-2-inverse 0.6s;
+    /* inverse slide effect on even content blocks */
+    .cd-timeline-block:nth-child(even) .cd-timeline-content.slide-in {
+        @include vendor('animation', 'cd-slide-2-inverse 0.6s');
     }
 }
 
-@-webkit-keyframes cd-bounce-2 {
+@include keyframes(cd-slide-1) {
     0% {
         opacity: 0;
-        -webkit-transform: translateX(-100px);
+        @include vendor('transform', scale(0.5));
     }
     60% {
         opacity: 1;
-        -webkit-transform: translateX(20px);
     }
     100% {
-        -webkit-transform: translateX(0);
+        opacity: 1;
+        @include vendor('transform', scale(1.0));
     }
 }
 
-@-moz-keyframes cd-bounce-2 {
+@include keyframes(cd-slide-2) {
     0% {
         opacity: 0;
-        -moz-transform: translateX(-100px);
+        @include vendor('transform', translateX(-100px));
     }
     60% {
         opacity: 1;
-        -moz-transform: translateX(20px);
     }
     100% {
-        -moz-transform: translateX(0);
+        opacity: 1;
+        @include vendor('transform', translateX(0px));
     }
 }
 
-@keyframes cd-bounce-2 {
+@include keyframes(cd-slide-2-inverse) {
     0% {
         opacity: 0;
-        -webkit-transform: translateX(-100px);
-        -moz-transform: translateX(-100px);
-        -ms-transform: translateX(-100px);
-        -o-transform: translateX(-100px);
-        transform: translateX(-100px);
+        @include vendor('transform', translateX(100px));
     }
     60% {
         opacity: 1;
-        -webkit-transform: translateX(20px);
-        -moz-transform: translateX(20px);
-        -ms-transform: translateX(20px);
-        -o-transform: translateX(20px);
-        transform: translateX(20px);
     }
     100% {
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0);
-    }
-}
-
-@-webkit-keyframes cd-bounce-2-inverse {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateX(100px);
-    }
-    60% {
         opacity: 1;
-        -webkit-transform: translateX(-20px);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-    }
-}
-
-@-moz-keyframes cd-bounce-2-inverse {
-    0% {
-        opacity: 0;
-        -moz-transform: translateX(100px);
-    }
-    60% {
-        opacity: 1;
-        -moz-transform: translateX(-20px);
-    }
-    100% {
-        -moz-transform: translateX(0);
-    }
-}
-
-@keyframes cd-bounce-2-inverse {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateX(100px);
-        -moz-transform: translateX(100px);
-        -ms-transform: translateX(100px);
-        -o-transform: translateX(100px);
-        transform: translateX(100px);
-    }
-    60% {
-        opacity: 1;
-        -webkit-transform: translateX(-20px);
-        -moz-transform: translateX(-20px);
-        -ms-transform: translateX(-20px);
-        -o-transform: translateX(-20px);
-        transform: translateX(-20px);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
-        transform: translateX(0);
+        @include vendor('transform', translateX(0px));
     }
 }
