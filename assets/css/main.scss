@@ -8,14 +8,14 @@
 // Import colors, fonts etc...
 @import "variables";
 
-// Import custom mixins
-@import "mixins";
-
 // Import layout mixin
 @import "layout";
 
 // Import syntax
 @import "syntax";
+
+// Import custom mixins
+@import "mixins";
 
 // Import from skel.io
 @import "skel";
@@ -32,7 +32,7 @@ html * {
 }
 
 *, *:after, *:before {
-  @include box-sizing(border-box);
+  @include vendor('box-sizing', 'border-box');
 }
 
 body {
@@ -227,7 +227,7 @@ header.main-header {
     color: inherit;
     border-bottom: 2px transparent solid;
     padding-bottom:5px;
-    @include transition(all, .2s);
+    @include vendor('transition', 'all, .2s');
     @include MQ(M) {
       @include font-size(18px);
     }
@@ -298,7 +298,7 @@ footer.main-footer {
     background-image: url("./images/socials-icons.svg");
     background-size: 224px 64px;
     border-radius: 0.25em;
-    @include transition(background-color 0.2s);
+    @include vendor('transition', 'background-color 0.2s');
     border-bottom-color: transparent;
 
     &:hover {
@@ -357,8 +357,8 @@ footer.main-footer {
     background-image: url("./images/socials-icons.png");
     background-size: 224px 64px;
     border-radius: 0.25em;
-    @include transition(background-color 0.2s);
     border-bottom-color: transparent;
+    @include vendor('transition', 'background-color 0.2s');
 
     &:hover {
       background-color: $base-08;
@@ -371,7 +371,7 @@ div.page-content-bg {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -999;
   background-color: #4686a0;
   background-image: url("./images/overlay.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
   background-repeat: no-repeat;
