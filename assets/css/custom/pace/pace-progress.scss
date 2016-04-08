@@ -1,7 +1,7 @@
 ---
 ---
 // Import custom mixins
-@import "mixins";
+@import "skel";
 
 /**
  * Styles for pace.js
@@ -10,7 +10,7 @@
 body >:not(.pace),
 body:before,
 body:after {
-    @include transition(opacity .4s ease-in-out);
+    @include vendor('transition', 'opacity .4s ease-in-out');
 }
 
 body:not(.pace-done) >:not(.pace),
@@ -23,7 +23,7 @@ body:not(.pace-done):after {
     -webkit-pointer-events: none;
     pointer-events: none;
     color: #000;
-    @include user-select(none);
+    @include vendor('user-select', none);
 }
 
 .pace-progress {
@@ -36,8 +36,8 @@ body:not(.pace-done):after {
     height: 5rem;
     width: 5rem;
     opacity: 1;
-    @include transition(opacity .1s);
-    @include transform(translate3d(0, 0, 0)!important);
+    @include vendor('transition', 'opacity .1s');
+    @include vendor('transform', 'translate3d(0, 0, 0)!important');
 }
 
 .pace-inactive .pace-progress,
@@ -66,7 +66,7 @@ body:not(.pace-done):after {
     top: 0;
     -webkit-transition: -webkit-transform .1s;
     transition: transform .1s;
-    @include transform-origin(left center);
+    @include vendor('transform-origin', 'left center');
 }
 
 .pace-progress .pace-progress-inner:after,
@@ -85,7 +85,7 @@ body:not(.pace-done):after {
 .pace-progress .pace-progress-inner:before {
     border-right-color: transparent;
     border-bottom-color: transparent;
-    @include transform(rotate(135deg));
+    @include vendor('transform', rotate(135deg));
 }
 
 .pace-progress .pace-progress-inner:after {
@@ -93,7 +93,7 @@ body:not(.pace-done):after {
     border-top-color: transparent;
     display: none;
 
-    @include transform(rotate(315deg));
+    @include vendor('transform', rotate(315deg));
 }
 
 @for $i from 0 through 100 {
@@ -106,7 +106,7 @@ body:not(.pace-done):after {
         $deg: round(3.6 * $i - 45) + deg;
 
         .pace-progress[data-progress="#{$progress}"] .pace-progress-inner:before {
-            @include transform(rotate($deg));
+            @include vendor('transform', rotate($deg));
         }
     }
 
@@ -114,7 +114,7 @@ body:not(.pace-done):after {
         $deg: round(3.6 * $progress + 135) + deg;
 
         .pace-progress[data-progress="#{$progress}"] .pace-progress-inner:after {
-            @include transform(rotate($deg));
+            @include vendor('transform', rotate($deg));
             display: block;
         }
     }
@@ -122,7 +122,7 @@ body:not(.pace-done):after {
     $deg: round(3.6 * $i) + deg;
 
     .pace-progress[data-progress="#{$progress}"] .pace-progress-inner {
-        @include transform(rotate($deg));
+        @include vendor('transform', rotate($deg));
         overflow: visible;
     }
 }
