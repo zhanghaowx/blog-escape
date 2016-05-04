@@ -18,9 +18,10 @@ Years ago when I read a post "[Using Composer with WordPress](https://roots.io/u
 
 Here are my steps:
 
-1. Create a new Droplet on [DigitalOcean](https://www.digitalocean.com/)
-  - Under "Select Image", choose "Applications -> LAMP on 14.04", or similar options if not available.
-2. Install Dependencies
+###### 1. Create a new Droplet on [DigitalOcean](https://www.digitalocean.com/)
+- Under "Select Image", choose "Applications -> LAMP on 14.04", or similar options if not available.
+
+###### 2. Install Dependencies
   {% highlight bash %}
   # install git
   apt-get update & apt-get install git
@@ -28,7 +29,8 @@ Here are my steps:
   curl -sS https://getcomposer.org/installer | php &> /dev/null
   mv composer.phar /usr/local/bin/composer
   {% endhighlight %}
-3. Follow docs at [roots/bedrock] to install [WordPress] boilerplate
+
+###### 3. Follow docs at [roots/bedrock] to install [WordPress] boilerplate
 - Refer to "Installation" section for details
 - After `mysql -u root -p`, using following command to create database and users for WordPress
   {% highlight sql %}
@@ -37,8 +39,11 @@ Here are my steps:
   GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
   FLUSH PRIVILEGES;
   {% endhighlight %}
-4. Follow instructions at [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts) to setup virtual host on Ubuntu 14.04.
-5. (Optional) If you have permission issue to access your website after setting up virtual host, you can follow post [How To Configure Secure Updates and Installations in WordPress on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-configure-secure-updates-and-installations-in-wordpress-on-ubuntu) to use my scripts from [WordPress-DigitalOcean](https://github.com/zhanghaowx/WordPress-DigitalOcean). Here is the minimum code you need:
+
+###### 4. Follow instructions at [How To Set Up Apache Virtual Hosts on Ubuntu 14.04 LTS](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts) to setup virtual host on Ubuntu 14.04.
+
+###### 5. (Optional) If you have permission issue to access your website after setting up virtual host, you can follow post [How To Configure Secure Updates and Installations in WordPress on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-configure-secure-updates-and-installations-in-wordpress-on-ubuntu) to use my scripts from [WordPress-DigitalOcean](https://github.com/zhanghaowx/WordPress-DigitalOcean). 
+Here is the minimum code you need:
   {% highlight bash %}
   ##### config WordPress ftp user account #####
   echo "=========="
@@ -84,7 +89,8 @@ Here are my steps:
       fi
   fi
   {% endhighlight %}
-6. Done! Go to [here](https://roots.io/bedrock/docs/installing-bedrock/) for bedrock docs.
+
+###### 6. Done! Go to [here](https://roots.io/bedrock/docs/installing-bedrock/) for bedrock docs.
 
 
 [roots/bedrock]:https://github.com/roots/bedrock
