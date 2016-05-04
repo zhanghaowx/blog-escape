@@ -892,7 +892,6 @@ body {
     &:after {
         @include vendor('pointer-events', 'none');
         @include vendor('transition', 'opacity 3s ease-in-out');
-        @include vendor('transition-delay', '1.25s');
         background-color: #0090d9;
         content: '';
         z-index: -1;
