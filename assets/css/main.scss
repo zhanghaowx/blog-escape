@@ -43,7 +43,6 @@ body {
 }
 
 .wc-container {
-    width: 90%;
     max-width: $M; // see breakpoints in _sass/partials/_layout.scss
     margin: 0 auto;
 
@@ -351,7 +350,7 @@ footer.main-footer {
 }
 
 .no-svg footer.main-footer ul.social-media li a {
-  width: 32px;
+    width: 32px;
     height: 32px;
     background-color: $base-07;
     background-image: url("./images/socials-icons.png");
@@ -386,6 +385,10 @@ div.page-content {
   @include MQ(M) {
     min-height: 400px;
   }
+}
+
+div.page-content.page-home {
+    background: #fafafa;
 }
 
 div.page-content {
@@ -517,8 +520,8 @@ header.main-header {
   @include MQ(M) { padding: 2em 0; }
 }
 footer.main-footer {
-  padding: 1em 0;
-  @include MQ(M) { padding: 2em 0; }
+  padding: 1em;
+  @include MQ(M) { padding: 2em; }
 }
 .page-content {
   padding: 1em 0;
