@@ -386,8 +386,8 @@ div.page-content {
   }
 }
 
-div.page-content.page-home {
-    background: #fafafa;
+div.page-content.page-posts {
+    background: #f8fbf6;
 }
 
 div.page-content {
@@ -899,7 +899,6 @@ body {
         @include vendor('transition', 'opacity 3s ease-in-out');
         background-color: #0090d9;
         content: '';
-        z-index: -1;
         display: block;
         width: 100%;
         height: 100%;

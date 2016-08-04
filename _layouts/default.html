@@ -32,6 +32,13 @@
     <!-- Modernizr js -->
     <script async src="{{ site.baseurl }}/assets/externals/modernizr/modernizr.min.js"></script>
 
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- When no internet load JQuery from local -->
+    <script>
+        window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/externals/jquery/jquery.min.js"><\/script>')
+    </script>
+
     <!-- IE Fixes -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,12 +80,6 @@
             {% include footer.html %}
         </p>
     </footer>
-    <!-- jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- When no internet load JQuery from local -->
-    <script>
-        window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/externals/jquery/jquery.min.js"><\/script>')
-    </script>
     <!-- Site js -->
 
     {% if site.harmony.pace_theme %}

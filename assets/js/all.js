@@ -1,12 +1,5 @@
 ---
 ---
-var $window = $(window)
-    , $body = $('body')
-    , $banner = $('.banner')
-
-// Disable animations/transitions until the page has loaded.
-$window.on('load', function () {
-    window.setTimeout(function () {
-        $body.removeClass('is-animating');
-    }, 0);
-});
+/**
+ * Put JavaScript that will be shared by all pages here
+ */
