@@ -782,7 +782,7 @@ body {
             @include vendor('transition', 'none !important');
             //@include vendor('filter', 'blur(5px)');
         }
-        .banner {
+        .page-banner {
             h2 {
                 @include vendor('transform',
                 'scale(0.95)');
@@ -807,7 +807,7 @@ body {
     }
 }
 
-.banner {
+.page-banner {
     @include vendor('display', 'flex');
     @include vendor('flex-direction', 'column');
     @include vendor('justify-content', 'center');

@@ -1,6 +1,6 @@
 var $window = $(window),
     $body = $('body'),
-    $banner = $('.banner')
+    $banner = $('.page-banner')
 
 // Disable animations/transitions until the page has loaded.
 $window.on('load', function () {
