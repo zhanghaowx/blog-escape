@@ -8,11 +8,12 @@ permalink: /blog/
     {% for post in site.posts %}
         {% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
         {% if currentyear != year %}
+            {% unless forloop.index %}</ul>{% endunless %}
             <h5>{{ currentyear }}</h5>
             <ul class="posts">
             {% capture year %}{{currentyear}}{% endcapture %}
-            {% unless forloop.first %}</ul>{% endunless %}
         {% endif %}
         <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
     {% endfor %}
+    </ul>
 </div>
