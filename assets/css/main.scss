@@ -42,6 +42,10 @@ body {
   }
 }
 
+.font-black {
+    color: black !important;
+}
+
 .wc-container {
     max-width: $M; // see breakpoints in _sass/partials/_layout.scss
     margin: 0 auto;
