@@ -2,19 +2,21 @@
 layout: default
 header: none
 ---
-<!-- Banner -->
-<section class="banner">
-    <div class="inner">
+<!-- Intro -->
+<div class="page-content page-banner">
+    <div id="particles-js" class="background"></div>
+    <div class="title">
         <h2>{{ site.harmony.name }}</h2>
         <p>{{ site.harmony.description }}</p>
     </div>
-    <a href="#" class="more scrolly">Read More</a>
-</section>
-<div id="particles-js" class="page-content-bg"></div>
-<div id="home" class="page-content page-home">
+    <a href="#posts" class="more scrolly">Read More</a>
+</div>
+<!-- Home -->
+<div id="posts" class="page-content page-posts">
     {% if site.harmony.post.timeline %}
         {% include post-timeline.html %}
     {% else %}
         {% include post.html %}
     {% endif %}
 </div>
+<script src="{{ site.baseurl }}/assets/js/pages/index.js"></script>

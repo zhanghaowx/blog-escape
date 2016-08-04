@@ -77,6 +77,7 @@ body {
     left: 0;
     padding: 0;
     opacity: 0;
+    z-index: 1;
     overflow: hidden;
     position: absolute;
     visibility: hidden;
@@ -90,8 +91,18 @@ body {
   }
 
   &.open:after {
-    opacity: 1;
+    opacity: 0.5;
     visibility: visible;
+  }
+
+  & > .page-content {
+      transition: 0.1s filter linear;
+      transition: 0.1s -webkit-filter linear;
+  }
+
+  &.open > .page-content {
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
   }
 }
 
