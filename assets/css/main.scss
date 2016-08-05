@@ -374,11 +374,12 @@ div.background {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4686a0;
-  background-image: url("./images/overlay.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  // Needs latest Compass, add '@import "compass"' to your scss
+  // Permalink - use to edit and share this gradient:
+  // http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231
+  background-color: #45484d; // Old browsers
+  @include vendor('filter-gradient', '#000000, #272935, vertical'); // IE6-9
+  @include vendor('background-image', 'linear-gradient(top,#000000 0%,#272935 100%)');
 }
 
 div.page-content {
@@ -901,7 +902,7 @@ body {
     &:after {
         @include vendor('pointer-events', 'none');
         @include vendor('transition', 'opacity 3s ease-in-out');
-        background-color: #0090d9;
+        background-color: #171b1d;
         content: '';
         display: block;
         width: 100%;

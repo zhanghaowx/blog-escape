@@ -9,7 +9,7 @@
 
 $color-stack:
   (group: primary, id: normal, color: #fff),
-  (group: bg, id: normal, color: #4686a0);
+  (group: bg, id: normal, color: #000);
 
 @function color($group, $shade:normal, $transparency:1) {
   @each $color in $color-stack {
@@ -71,7 +71,6 @@ $b-pad-top: ($b-height / 2 - $b-bun-width-half); //Vertically centers bun in men
 
 body {
   &:after {
-    background: color(bg);
     content: '';
     top: 0;
     left: 0;
