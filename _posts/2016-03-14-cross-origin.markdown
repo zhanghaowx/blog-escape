@@ -54,7 +54,7 @@ Finally I workaournded the problem by disabling **CORS** in Chrome:
 ## For Windows, option --user-data-dir is necessary
 chrome.exe --user-data-dir="C:/Chrome Dev Session" --disable-web-security
 ## For Linux
-google-chrome --disable-web-security
+google-chrome --disable-web-security --user-data-dir="<custom directory>"
 ## For Mac OS
 open -a Google\ Chrome --args --disable-web-security
 {% endhighlight %}
