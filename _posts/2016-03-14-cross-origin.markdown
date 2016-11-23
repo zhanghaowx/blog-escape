@@ -56,7 +56,7 @@ chrome.exe --user-data-dir="C:/Chrome Dev Session" --disable-web-security
 ## For Linux
 google-chrome --disable-web-security --user-data-dir="<custom directory>"
 ## For Mac OS
-open -a Google\ Chrome --args --disable-web-security
+open -a Google\ Chrome --args --disable-web-security --args --user-data-dir
 {% endhighlight %}
 
 ## More
