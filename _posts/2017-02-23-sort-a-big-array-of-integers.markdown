@@ -1,8 +1,8 @@
 ---
 layout: post
-permalink: sort-a-big-array
+permalink: sort-a-big-array-of-integers
 comments: true
-title: "Sort A Big Array"
+title: "Sort A Big Array of integers"
 date: 2017-02-23 23:21:00
 description: Find a way to sort big data structures
 font-awesome: sort-numeric-asc
