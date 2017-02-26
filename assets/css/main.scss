@@ -863,6 +863,7 @@ body {
         }
     }
     .title {
+        user-select: none;
         z-index: 1;
     }
     .more {
@@ -883,6 +884,7 @@ body {
         position: absolute;
         text-align: center;
         text-transform: uppercase;
+        user-select: none;
         width: 16em;
         &:after {
             background-image: url('./images/arrow.svg');

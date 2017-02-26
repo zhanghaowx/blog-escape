@@ -10,8 +10,9 @@ $window.on('load', function () {
 });
 
 // Read more button
-// $(".more.scrolly").click(function () {
-//     $('html,body').animate({
-//         scrollTop: $(".page-posts").offset().top
-//     }, 'slow');
-// });
+$(".more.scrolly").click(function (e) {
+    e.preventDefault();
+    $('html,body').animate({
+        scrollTop: $(".page-posts").offset().top
+    }, 'slow');
+});
