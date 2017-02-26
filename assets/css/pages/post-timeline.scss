@@ -3,7 +3,8 @@
 
 @import "skel";
 
-$bg-color: rgba(255, 255, 255, 0.9);
+$bg-color: rgba(245, 245, 245, 0.9);
+$min-width: 9999px;
 
 /*
  * Override styles in main.scss
@@ -22,7 +23,7 @@ Modules - reusable parts of our design
 .cd-container {
     /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
     width: 90%;
-    max-width: 1170px;
+    max-width: $min-width;
     margin: 0 auto;
 }
 
@@ -50,7 +51,7 @@ Modules - reusable parts of our design
     background: #d7e4ed;
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: $min-width) {
     #cd-timeline {
         margin-top: 3em;
         margin-bottom: 3em;
@@ -80,7 +81,7 @@ Modules - reusable parts of our design
     margin-bottom: 0;
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: $min-width) {
     .cd-timeline-block {
         margin: 4em 0;
     }
@@ -131,7 +132,7 @@ Modules - reusable parts of our design
     box-shadow: 0 0 0 8px #455a70;
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: $min-width) {
     .cd-timeline-img {
         width: 60px;
         height: 60px;
@@ -229,7 +230,7 @@ Modules - reusable parts of our design
     }
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: $min-width) {
     .cd-timeline-content {
         margin-left: 0;
         padding: 1.6em;
@@ -279,7 +280,7 @@ Modules - reusable parts of our design
     }
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: $min-width) {
     /* inverse slide effect on even content blocks */
     .cd-timeline-block:nth-child(even) .cd-timeline-content.slide-in {
         @include vendor('animation', 'cd-slide-2-inverse 0.6s');

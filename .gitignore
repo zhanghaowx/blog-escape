@@ -1,9 +1,9 @@
-_site/
 .DS_Store
 .*.swp
 .idea
 .sass-cache/
 *~
-bourbon/
+_site/
 node_modules/
+bower_components/
 Gemfile.lock

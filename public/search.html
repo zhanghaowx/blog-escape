@@ -1,0 +1,39 @@
+---
+layout: default
+title: Search
+permalink: /search/
+---
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/pages/search.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/pages/post-timeline.css">
+<!-- Html Elements for Search -->
+<div id="search-container">
+    <input type="search" id="search-input" placeholder="">
+</div>
+<section id="search-result" class="cd-container"></section>
+<!-- Script pointing to jekyll-search.js -->
+<script src="{{ site.baseurl }}/node_modules/simple-jekyll-search/dest/jekyll-search.js" type="text/javascript"></script>
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-result'),
+        json: '{{ site.baseurl }}/search.json',
+        templateMiddleware: function(prop, value, template) {
+            if (prop === 'index') {
+                return Math.floor(Math.random() * 5);
+            }
+        },
+        searchResultTemplate: '<div class="cd-timeline-block"> \
+            <div class="cd-timeline-img color{index}"> \
+                <i class="fa fa-{icon}"></i> \
+            </div> \
+            <div class="cd-timeline-content"> \
+                <h2><a href="{url}" class="font-black">{title}</a></h2> \
+                <div class="cd-categories"> \
+                    <label class="label label-default">c++</label> \
+                </div> \
+                <p>{desc}</p> \
+                <span class="cd-date">{date}</span> \
+            </div> \
+        </div>',
+    })
+</script>

@@ -1,0 +1,54 @@
+---
+---
+@import "skel";
+
+#search-container {
+    text-align: center;
+}
+
+#search-container,
+#search-result {
+    margin-bottom: 50px;    
+}
+
+input[type=search] {
+    outline: none;
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    display: none;
+}
+
+input[type=search] {
+    background: #fefefe url("../images/search-icon.png") no-repeat 9px center;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 32px;
+    width: 100px;
+
+    @include vendor('border-radius', '10em');
+    @include vendor('transition', 'all, .5s');
+}
+
+input[type=search]:focus {
+    width: 200px;
+    background-color: #fff;
+    border-color: #66CC75;
+
+    @include vendor('box-shadow', '0 0 5px rgba(109,207,246,.5)');
+}
+
+input[type=search]:-moz-placeholder {
+    color: #999;
+}
+
+input[type=search]::-webkit-input-placeholder {
+    color: #999;
+}

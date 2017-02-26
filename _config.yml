@@ -46,7 +46,7 @@ harmony:
   show_particles_background: true
 
   # Choose page load indicator's theme by pace.js
-  # Look at files assets/css/custom/pace-*.scss for possible values
+  # Look at files assets/css/plugins/pace/pace-*.scss for possible values
   # Leave empty if don't want pace.js
   pace_theme:
 
