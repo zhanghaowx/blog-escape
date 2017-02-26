@@ -5,4 +5,5 @@ _site/
 .sass-cache/
 *~
 bourbon/
+node_modules/
 Gemfile.lock

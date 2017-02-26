@@ -19,4 +19,9 @@ header: none
         {% include post.html %}
     {% endif %}
 </div>
+
+{% if site.harmony.show_particles_background %}
+<script src="{{ site.baseurl }}/assets/externals/particles/particles.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/custom/particles.js"></script>
+{% endif %}
 <script src="{{ site.baseurl }}/assets/js/pages/index.js"></script>
