@@ -4,8 +4,8 @@
   {% for post in site.posts %}
     {
       "title"    : "{{ post.title | escape }}",
-      "desc"     : "{{ post.description | 'post' }}",
-      "icon"     : "{{ post.font-awesome | 'bookmark' }}",
+      "desc"     : "{{ post.description | post }}",
+      "icon"     : "{{ post.font-awesome | bookmark }}",
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
