@@ -1,0 +1,24 @@
+{
+  "name": "blog-escape",
+  "version": "1.0.0",
+  "description": "Hao's personal blog",
+  "main": "index.html",
+  "dependencies": {
+    "simple-jekyll-search": "^1.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhanghaowx/Blog-Escape.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Hao Zhang <zhanghaowx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhanghaowx/Blog-Escape/issues"
+  },
+  "homepage": "https://github.com/zhanghaowx/Blog-Escape#readme"
+}

@@ -26,7 +26,7 @@
 
     <!-- Pace js -->
     {% if site.harmony.pace_theme %}
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/pace/pace-{{ site.harmony.pace_theme }}.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/plugins/pace/pace-{{ site.harmony.pace_theme }}.css">
     {% endif %}
 
     <!-- Modernizr js -->
@@ -50,7 +50,7 @@
     {% include favicon.html %}
 </head>
 
-<body class="{{ site.harmony.basetheme }} is-animating">
+<body class="{{ site.harmony.basetheme }}">
     {% if site.harmony.layout.sidebar %}
         {% include sidebar.html %}
     {% endif %}

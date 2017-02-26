@@ -1,9 +1,9 @@
-<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom/sidebar.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/pages/sidebar.css">
 
 <!-- Navigation -->
 <div class="b-nav">
-    <li><a class="b-link" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">Home</a></li>
-    <li><a class="b-link" href="#">Search</a></li>
+    <!-- <li><a class="b-link" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">Home</a></li> -->
+    <li><a class="b-link" href="{{ '/search' | prepend: site.baseurl | prepend: site.url }}">Search</a></li>
     <li><a class="b-link" href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a></li>
     <li><a class="b-link" href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a></li>
 </div>
@@ -21,14 +21,14 @@
 </div>
 <script type="text/javascript">
     'use strict';
-    (function () {
+    (function() {
         var body = document.body;
         var burgerMenu = document.getElementsByClassName('b-menu')[0];
         var burgerContain = document.getElementsByClassName('b-container')[0];
         var burgerNav = document.getElementsByClassName('b-nav')[0];
 
         burgerMenu.addEventListener('click', function toggleClasses() {
-            [body, burgerContain, burgerNav].forEach(function (el) {
+            [body, burgerContain, burgerNav].forEach(function(el) {
                 el.classList.toggle('open');
             });
         }, false);
