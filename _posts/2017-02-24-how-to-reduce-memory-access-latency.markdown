@@ -49,7 +49,7 @@ categories:
     ```
     - Use cache-friendly algorithms, e.g. quick sort (changes the array in-place).
 
-- **Prefer undefined behavior over safety where appropriate**. Safety checks can be very expensive when you're pushing into the sub-microsecond level.
+- **Prefer undefined behavior over safety where appropriate**. Safety checks can be very expensive when you're pushing into the sub-microsecond level. For example, `std::vector::at()` does a range check while `std::vector::operator[]()` doesn't and sightly faster.
 
 - **Avoid any memory allocations whenever possible.** There should be a very limited number of allocations. If anything, learn to use arenas/[memory pools](https://www.codeproject.com/Articles/27487/Why-to-use-memory-pool-and-how-to-implement-it) with placement new. This avoids the overhead of having to allocate memory without needing to rewrite malloc yourself. Avoid shared_ptrs unless you absolutely need them. The reference counter can cause a lot of latency if not used extremely carefully.
 

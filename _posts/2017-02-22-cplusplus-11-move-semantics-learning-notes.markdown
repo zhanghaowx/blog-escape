@@ -13,7 +13,7 @@ categories:
 **Rvalue References, Move Semantics, and Perfect Forwarding**
 >C++11 has introduced the concept of rvalue references (specified with &&) to differentiate a reference to an lvalue or an rvalue. ***An lvalue is an object that has a name, while an rvalue is an object that does not have a name (a temporary object)***. The move semantics allow modifying rvalues (previously considered immutable and indistinguishable from const T& types).
 
-* **Move semantics** makes it possible for compilers to replace expensive copying operations with less expensive moves. In the same way that copy constructors and copy assignment operators give you control over what it means to copy objects, move constructors and move assignment operators offer control over the semantics of moving. Move semantics also enables the creation of move-only types, such as `std::unique_ptr`, `std::future`, and `std::thread`.			
+* **Move semantics** makes it possible for compilers to replace expensive copying operations with less expensive moves. In the same way that copy constructors and copy assignment operators give you control over what it means to copy objects, move constructors and move assignment operators offer control over the semantics of moving. Move semantics also enables the creation of move-only types, such as `std::unique_ptr`, `std::future`, and `std::thread`.
 * **Perfect forwarding** makes it possible to write function templates that take arbitrary arguments and forward them to other functions such that the target functions receive exactly the same arguments as were passed to the forwarding functions.
 
 **`std::move` and `std::forward`**
@@ -192,3 +192,4 @@ Implement the move constructor and move assignment operator. These two special f
 * [The Biggest Changes in C++11 (and Why You Should Care)](http://blog.smartbear.com/c-plus-plus/the-biggest-changes-in-c11-and-why-you-should-care/)
 * [C++ Rvalue References Explained](http://thbecker.net/articles/rvalue_references/section_01.html)
 * [Universal References in C++11](https://isocpp.org/blog/2012/11/universal-references-in-c11-scott-meyers)
+* [C++11 Rvalues and Move Semantics Confusion](http://stackoverflow.com/a/4986802/1661064)
