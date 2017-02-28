@@ -17,7 +17,7 @@ categories:
 **1. Use Dynamic Programming with Space Optimized**
 
 ```c++
-size_t fibonacci(size_t n) {
+size_t fibonacci(int n) {
     if (n == 0)
         return 0;
     if (n == 1)
@@ -27,7 +27,7 @@ size_t fibonacci(size_t n) {
     size_t b = 1;
     size_t c = a + b;
 
-    for (size_t i = 2; i <= n; i++) {
+    for (int i = 2; i <= n; i++) {
         c = a + b;
         a = b;
         b = c;
@@ -243,7 +243,7 @@ private:
 And a fixed version of the previous dynamic programming solution
 ```c++
 template<typename T>
-T fibonacci1(size_t n) {
+T fibonacci1(int n) {
     if (n == 0)
         return 0;
     if (n == 1)
@@ -253,7 +253,7 @@ T fibonacci1(size_t n) {
     T b = 1;
     T c = a + b;
 
-    for (size_t i = 2; i <= n; i++) {
+    for (int i = 2; i <= n; i++) {
         c = a + b;
         a = b;
         b = c;
