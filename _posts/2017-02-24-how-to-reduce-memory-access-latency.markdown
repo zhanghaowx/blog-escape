@@ -104,4 +104,5 @@ categories:
 * [How does one become a low latency programmer?](https://www.quora.com/How-does-one-become-a-low-latency-programmer)
 * [What is “cache-friendly” code?](http://stackoverflow.com/questions/16699247/what-is-cache-friendly-code)
 * [The Lost Art of C Structure Packing](http://www.catb.org/esr/structure-packing/#_padding)
-* [Memory Access Granularity](http://www.ibm.com/developerworks/library/pa-dalign/)
+* [Data alignment: Straighten up and fly right](http://www.ibm.com/developerworks/library/pa-dalign/)
+* [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832)

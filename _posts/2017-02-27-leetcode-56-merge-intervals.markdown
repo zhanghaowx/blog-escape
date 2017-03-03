@@ -3,7 +3,7 @@ layout: post
 permalink: merge-intervals
 comments: true
 title: "LeetCode - 56.Merge Intervals"
-date: 2017-02-27å 00:55:00
+date: 2017-02-27 00:55:00
 description: Coding Interview Practice
 font-awesome: code
 categories:

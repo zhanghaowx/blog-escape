@@ -135,3 +135,4 @@ Different load balancing algorithms provide different benefits; the choice of lo
 - [Consisten Hashing](http://www.tom-e-white.com/2007/11/consistent-hashing.html)
 - [Load Balancing](https://www.nginx.com/resources/glossary/load-balancing/)
 - [Short URLs Considered Harmful for Cloud Services](https://freedom-to-tinker.com/blog/vitaly/gone-in-six-characters-short-urls-considered-harmful-for-cloud-services/)
+- [Scaling Your Web App 101](https://blog.hartleybrody.com/scale-load/)
