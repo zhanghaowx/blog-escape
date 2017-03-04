@@ -8,7 +8,7 @@
 
 #search-container,
 #search-result {
-    margin-bottom: 50px;    
+    margin-bottom: 50px;
 }
 
 input[type=search] {
@@ -31,14 +31,14 @@ input[type=search] {
     background: #fefefe url("../images/search-icon.png") no-repeat 9px center;
     border: solid 1px #ccc;
     padding: 9px 10px 9px 32px;
-    width: 100px;
+    width: 200px;
 
     @include vendor('border-radius', '10em');
     @include vendor('transition', 'all, .5s');
 }
 
 input[type=search]:focus {
-    width: 200px;
+    width: 400px;
     background-color: #fff;
     border-color: #66CC75;
 
