@@ -1,7 +1,7 @@
 # Harmony Jekyll theme general configurations
 
 # Base URL
-baseurl: /Blog-Escape
+baseurl:
 
 # Site live URL
 url: http://zhanghaowx.github.io
