@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: longest-substring-without-repeating-characters
+permalink: leetcode-03-longest-substring-without-repeating-characters
 comments: true
 title: "LeetCode - 3.Longest Substring Without Repeating Characters"
 date: 2017-02-18 17:15:00
@@ -50,6 +50,8 @@ public:
         for (int i = 0; i < s.length(); i++) {
             max = max > len[i] ? max : len[i];
         }
+
+        delete[] len;
 
         return max;
     }

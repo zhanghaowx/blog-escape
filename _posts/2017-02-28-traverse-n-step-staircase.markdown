@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: leetcode-practice
+permalink: traverse-n-step-staircase
 comments: true
 title: "Find the number of possible ways one can traverse a n-step staircase"
 date: 2017-02-28 22:55:00

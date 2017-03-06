@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: two-sum
+permalink: leetcode-01-two-sum
 comments: true
 title: "LeetCode - 1.Two Sum"
 date: 2017-02-16 22:49:32

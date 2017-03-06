@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: add-two-numbers
+permalink: leetcode-02add-two-numbers
 comments: true
 title: "LeetCode - 2.Add Two Numbers"
 date: 2017-02-17 21:57:00
