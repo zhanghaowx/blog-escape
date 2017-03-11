@@ -1,0 +1,92 @@
+---
+layout: post
+permalink: leetcode-91-decode-ways
+comments: true
+title: "Decode Ways"
+date: 2017-03-11 23:33:00
+description: Coding Interview Practice
+font-awesome: code
+categories:
+- c++
+- algorithm
+- leetcode
+- microsoft
+- uber
+- facebook
+---
+**Problem**:
+A message containing letters from `A-Z` is being encoded to numbers using the following mapping:
+
+```
+'A' -> 1
+'B' -> 2
+...
+'Z' -> 26
+```
+Given an encoded message containing digits, determine the total number of ways to decode it.
+
+For example,
+Given encoded message `"12"`, it could be decoded as `"AB"` (1 2) or `"L"` (12).
+
+The number of ways decoding `"12"` is 2.
+
+**Solution**:
+
+## Recursive
+
+```c++
+class Solution {
+public:
+    int numDecodings(string s) {
+        if (s.length() == 0)
+            return 0;
+        return numDecodings(s, s.length());
+    }
+
+    int numDecodings(string s, int len) {
+        // special cases
+        if (len == 0) {
+            return 1;
+        }
+
+        if (len == 1) {
+            return canDecodeOne(s, len - 1) ? 1 : 0;
+        }
+
+        // recursive calls
+        int count = 0;
+        if (canDecodeOne(s, len - 1)) {
+            count += numDecodings(s, len - 1);
+        }
+
+        if (canDecodeTwo(s, len - 2, len - 1)) {
+            count += numDecodings(s, len - 2);
+        }
+
+        return count;
+    }
+
+    bool canDecodeOne(string s, int i) {
+        if (i < 0)
+            return false;
+        // 0 is not mapped to any letter
+        if (s[i] == '0')
+            return false;
+        return true;
+    }
+
+    bool canDecodeTwo(string s, int left, int right) {
+        if (left < 0 || right >= s.size())
+            return false;
+
+        int num = stoi(s.substr(left, right - left + 1));
+        if (10 <= num && num <= 26) {
+            return true;
+        }
+
+        return false;
+    }
+};
+```
+
+## Dynamic Programming
