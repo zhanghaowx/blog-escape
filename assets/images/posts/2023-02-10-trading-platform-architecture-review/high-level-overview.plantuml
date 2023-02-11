@@ -2,7 +2,7 @@
 
 cloud Exchange
 
-artifact TradingEngine {
+package "Trading Engine" as TradingEngine {
   rectangle MarketAccess
   rectangle MarketData
   Rectangle Strategy
@@ -13,27 +13,42 @@ artifact TradingEngine {
   MarketData <- Exchange
 }
 
-component "Publishers(for Trader UI)" as Publishers {
+package "Publishers(for Trader UI)" as Publishers {
   rectangle ValuationPublishers
   rectangle MarketDataPublishers
 }
 
-queue "\t\t\t\t\t\t\t\t\t\tNetworkMiddleware\t\t\t\t\t\t\t\t\t\t" as NetworkMiddleware
+package "Network Infrastructure" as NetworkInfrastructure {
+  queue "\t\t\t\t\t\t\t\t\t\tNetworkMiddleware\t\t\t\t\t\t\t\t\t\t" as NetworkMiddleware
+}
 
-component "Storage Application" as Database {
+package "Data Application" as Database {
   rectangle "Instrument Service" as InstrumentService
   rectangle "Parameter Service" as ParameterService
   database "Database" as DB
-  
+  rectangle "Volatility Calculator" as VolCalc
+  rectangle "Theo/Greeks Calculator" as TheoCalc
+  rectangle "Other Calculators" as OtherCalc
+  collections "GPUs"
+
   InstrumentService -d-> DB
   ParameterService -d-> DB
+  TheoCalc -d-> GPUs
 }
 
-database MiddleOffice
+package "Middle Office" as MiddleOffice {
+  database "Position Bridge"
+  database "Trade Bridg"
+  database "Spline Bridge"
+  database "Portfolio Bridge"
+}
+
+cloud "Clearing Firms" as Clearing
 
 Publishers -d-> NetworkMiddleware
 TradingEngine <-d-> NetworkMiddleware
-NetworkMiddleware -d-> MiddleOffice
+NetworkMiddleware <-d-> MiddleOffice
 NetworkMiddleware <-d-> Database
+MiddleOffice -l-> Clearing
 
 @enduml
