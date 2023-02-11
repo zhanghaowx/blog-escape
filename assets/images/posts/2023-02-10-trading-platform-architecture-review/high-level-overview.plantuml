@@ -2,8 +2,6 @@
 
 cloud Exchange
 
-queue "\t\t\t\t\tNetworkMiddleware\t\t\t\t\t" as NetworkMiddleware
-
 artifact TradingEngine {
   rectangle MarketAccess
   rectangle MarketData
@@ -15,9 +13,27 @@ artifact TradingEngine {
   MarketData <- Exchange
 }
 
+component "Publishers(for Trader UI)" as Publishers {
+  rectangle ValuationPublishers
+  rectangle MarketDataPublishers
+}
+
+queue "\t\t\t\t\t\t\t\t\t\tNetworkMiddleware\t\t\t\t\t\t\t\t\t\t" as NetworkMiddleware
+
+component "Storage Application" as Database {
+  rectangle "Instrument Service" as InstrumentService
+  rectangle "Parameter Service" as ParameterService
+  database "Database" as DB
+  
+  InstrumentService -d-> DB
+  ParameterService -d-> DB
+}
+
 database MiddleOffice
 
+Publishers -d-> NetworkMiddleware
 TradingEngine <-d-> NetworkMiddleware
 NetworkMiddleware -d-> MiddleOffice
+NetworkMiddleware <-d-> Database
 
 @enduml
