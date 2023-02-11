@@ -1,0 +1,23 @@
+@startuml
+
+cloud Exchange
+
+queue "\t\t\t\t\tNetworkMiddleware\t\t\t\t\t" as NetworkMiddleware
+
+artifact TradingEngine {
+  rectangle MarketAccess
+  rectangle MarketData
+  Rectangle Strategy
+  
+  MarketData -> Strategy
+  Strategy <-> MarketAccess
+  MarketAccess <-u-> Exchange
+  MarketData <- Exchange
+}
+
+database MiddleOffice
+
+TradingEngine <-d-> NetworkMiddleware
+NetworkMiddleware -d-> MiddleOffice
+
+@enduml
