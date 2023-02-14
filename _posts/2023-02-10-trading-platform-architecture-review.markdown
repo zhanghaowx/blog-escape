@@ -131,79 +131,18 @@ Micro Market Structure refers to the analysis of the behavior of the market at t
 
 ## Risk Management
 ---
-Under construction
+Risk is a way to describe the size of an investment. Trading desks use risk limits to restrict the size of investments that their traders can make on behalf of the firm and the firm’s investors. Limiting the size of investments is one of the primary ways that traders control risk. This is not just a matter of restricting capital since many investments (like futures) only require a small amount of money to initiate a trade. Instead, position limits are commonly based on a volatility-based estimate of size called value-at-risk, abbreviated VAR.
 
+Trading desks typically have several VAR limits. The first limit, a soft limit, indicates the target size of the trading portfolio. The second limit, a hard limit, indicates a size which trading positions are not allowed to exceed. Trading desks use these limits to ensure that traders are following trading rules set by the firm and to ensure that diversification is working properly.
 
-## Low Latency Techniques
----
-Under construction
-
-
-### Low Latency Techniques - Network Latency
-Reduce network latency for market data is the key to get signals earlier than other market participants to take action faster:
-
-
-#### Low Latency Techniques - Network Latency - Hardware
-* Use low latency fiber path
-* Wireless microwave (e.g. [Quincy Data](https://www.cmegroup.com/partner-services/quincy-data.html))
-
-
-#### Low Latency Techniques - Network Latency - Software
-* [Onload Library](https://www.xilinx.com/content/dam/xilinx/publications/solarflare/onload/enterprise-onload/SF-104474-CD-34_Onload_User_Guide.pdf): process network traffic directly on the network adapter, bypassing the operating system and reducing latency.
-
-
-### Low Latency Techniques - Hardware Low Latency
-
-#### Hardware Low Latency Techniques - FPGA
-FPGA, or Field-Programmable Gate Array, is a type of digital integrated circuit that can be programmed after manufacturing to perform specific tasks.
-
-* Send BulkDeletes (aka. Mass Cancels, Purge Port) to exchanges on certain triggers, usually on specific market packets
-* Send Orders (e.g. IOC) to exchanges on certain triggers, usually on specific market packets
-
-
-#### Hardware Low Latency Techniques - Server Configurations
-
-- **Tickless Kernel**:
-A tickless kernel is a type of operating system kernel that operates without a periodic timer interrupt, commonly referred to as a "tick." In traditional operating systems, the kernel uses a periodic timer interrupt to drive various system-level tasks, such as scheduling processes, updating system statistics, and handling timeouts.
-
-- **CPU Isolation**:
-CPU isolation is a technique used in computer systems to ensure that specific tasks or processes are executed on dedicated or isolated CPU resources. The goal of CPU isolation is to prevent interference or resource contention between different tasks or processes, thus ensuring predictable performance, latency, and resource utilization. In practice, CPU isolation is often implemented by assigning a dedicated set of CPU cores or hardware threads to a specific task or process. The OS then configures the CPU scheduler to only schedule the isolated task or process on these dedicated resources, and to prevent other tasks or processes from executing on them. This can be accomplished through the use of CPU masks, CPU sets, or CPU affinity settings in the OS scheduler.
-
-- **HyperThreading**:
-Hyper-threading is a technology that allows a single physical processor to present itself as two virtual processors to the operating system, potentially allowing for increased performance. However, this performance increase can also depend on the workload and the nature of the application being run. Especially when you have low latency requirements for your critial path, you may not want to share physical resources with others.
-
-#### Low Latency Techniques - Software Low Latency
-
-#### Software Low Latency Techniques - TLB Shootdowns
-TLB (Translation Lookaside Buffer) shootdown is a type of software issue that can occur in computer systems, particularly in multi-processor or multi-core systems, when two or more processors attempt to modify the same entry in the TLB simultaneously.
-
-The TLB is a hardware component in a computer system that helps to speed up memory access by translating virtual addresses into physical addresses. When a processor needs to access a memory location, it first looks up the virtual address in the TLB, which provides the physical address of the memory location.
-
-In a multi-processor system, it is possible for two or more processors to try to modify the same TLB entry simultaneously. This can lead to a conflict, called a TLB shootdown, which results in one or more processors invalidating their TLB entries, causing performance degradation.
-
-Here is a few situations that you may see TLB shootdown:
-* Context Switches
-* Sytem Call
-  - `munmap`: calling the `munmap` system call in a multi-threaded process returns memory to the kernal, and may cause pages from the VM to PM mapping to become stale, presenting a security risk as well as being incorrect. `nummap` is sometimes called as a result of a `free()` or `delete` call, which is often paired with `malloc()` or `new` call, or as a result of using Disk-backed mapping, also known as memory-mapped I/O or memory-mapped file I/O.
-  - `madvise`: calling the `madvise` system call change the mapping in a way that might cause incorrect behavior in other CPUs, and also often triggers TLB shootdowns.
-
-TLB shootdowns can have a significant impact on system performance, particularly in high-performance computing applications where low latency and high-throughput are critical. They can result in increased latencies, decreased throughput, and increased processor utilization.
-
-To avoid TLB shootdowns, systems can employ various techniques, such as software-based TLB management, hardware-based TLB management, and memory management units (MMUs) with larger TLBs. These techniques help to minimize the frequency and impact of TLB shootdowns and ensure that the system operates efficiently and with minimal latency.
-
-Below is one way to check TLB shootdowns:
-```python
-with open("/proc/interrupts", "r") as f:
-    for line in f:
-        if "TLB shootdowns" in line:
-            # Extract the number of TLB shootdowns from the line
-            tlb_shootdowns = int(line.strip().split()[1])
-            print("Number of TLB shootdowns:", tlb_shootdowns)
-```
-Note that the format of the `/proc/interrupts` file can vary between different Linux systems and kernel versions, so you may need to adjust the code to handle different formats or provide error handling for lines that do not contain the expected information.
-
-
-### Software Low Latency Techniques - Cache Warming
+* Local View: trading based on risk-reward tradeoff
+  - Market risk is the main source of risk traders consider
+  - Operational risk (especially auto-trading)
+  - Credit/Counterparty risk
+  - Adverse selection risk (a.k.a getting picked off): use MMP to defend aganist such risks
+  - Regulatory, legal and reputational risk
+* Global View: risk is a resource shared/allocated across desks to maximum revenue of the whole company
+  - Risk limits could be allocated based on expected PnL
 
 
 ### Software Low Latency Techniques - Ring/Circular Buffer
