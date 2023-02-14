@@ -1,0 +1,48 @@
+@startuml
+
+cloud Exchange
+
+package "Market Data" as MD {
+}
+
+queue "\t\t\t\t\t\t\t\tData Layer\t\t\t\t\t\t\t\t" as DataLayer {
+}
+
+package "Strategy" {
+  component Instruments
+  component Valuation
+  component PricingLib
+  component Algorithm
+}
+
+package RiskControl {
+  component "Order Frequency Check"
+  component "Duplicate Orders Check"
+  component "Price Bands Check"
+  component "Inflight Orders Count Check"
+  component "Max Cash Value Check"
+  component "..."
+}
+
+package "Market Access (FIX/Binary)" as MA {
+}
+
+package DeltaPool {
+  component HedgingStrategy {
+  }
+}
+
+MD -d-> DataLayer
+DataLayer -d-> Valuation
+DataLayer -d-> Instruments
+DataLayer -d-> PricingLib
+Valuation -> PricingLib
+Instruments -d-> Algorithm
+PricingLib -d-> Algorithm : "Theoretical Value"
+Algorithm -d-> MA : "Order(Quote) Insert/Amend/Cancel"
+RiskControl --> Algorithm
+MA -d-> Exchange : "FIX/Binary Protocol Messages"
+Exchange -u-> MA : "ACK/Fill/Unsolicited Cancel"
+MA -> DeltaPool : "Fill"
+
+@enduml

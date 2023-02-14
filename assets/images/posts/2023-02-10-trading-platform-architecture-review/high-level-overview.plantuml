@@ -2,6 +2,8 @@
 
 cloud Exchange
 
+:Trader UI: as TraderUI
+
 package "Trading Engine" as TradingEngine {
   rectangle MarketAccess
   rectangle MarketData
@@ -13,7 +15,7 @@ package "Trading Engine" as TradingEngine {
   MarketData <- Exchange
 }
 
-package "Publishers(for Trader UI)" as Publishers {
+package "Data Publishers" as Publishers {
   rectangle ValuationPublishers
   rectangle MarketDataPublishers
 }
@@ -45,6 +47,7 @@ package "Middle Office" as MiddleOffice {
 
 cloud "Clearing Firms" as Clearing
 
+Publishers -u-> TraderUI
 Publishers -d-> NetworkMiddleware
 TradingEngine <-d-> NetworkMiddleware
 NetworkMiddleware <-d-> MiddleOffice
