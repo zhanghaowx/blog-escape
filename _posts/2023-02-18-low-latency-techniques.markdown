@@ -67,11 +67,14 @@ A tickless kernel is a type of operating system kernel that operates without a p
 - **CPU Isolation**:
 CPU isolation is a technique used in computer systems to ensure that specific tasks or processes are executed on dedicated or isolated CPU resources. The goal of CPU isolation is to prevent interference or resource contention between different tasks or processes, thus ensuring predictable performance, latency, and resource utilization. In practice, CPU isolation is often implemented by assigning a dedicated set of CPU cores or hardware threads to a specific task or process. The OS then configures the CPU scheduler to only schedule the isolated task or process on these dedicated resources, and to prevent other tasks or processes from executing on them. This can be accomplished through the use of CPU masks, CPU sets, or CPU affinity settings in the OS scheduler.
 
+**Read More**:
+- [Predictive CPU isolation of containers at Netflix](https://netflixtechblog.com/predictive-cpu-isolation-of-containers-at-netflix-91f014d856c7)
+
 - **HyperThreading**:
 Hyper-threading is a technology that allows a single physical processor to present itself as two virtual processors to the operating system, potentially allowing for increased performance. However, this performance increase can also depend on the workload and the nature of the application being run. Especially when you have low latency requirements for your critial path, you may not want to share physical resources with others.
 
 
-**Reference:**
+**Read More:**
 - [Low latency tuning guide](https://rigtorp.se/low-latency-guide/)
 
 # Software Low Latency
@@ -108,8 +111,19 @@ Note that the format of the `/proc/interrupts` file can vary between different L
 
 ### Cache Warming
 
+**Read More**:
+- [High-Frequency Trading and Ultra Low Latency Development Techniques](https://corecppil.github.io/CoreCpp2019/Presentations/Nimrod_High_Frequency_Trading.pdf)
 
-### Ring/Circular Buffer
+### Memory Management
+
+**Principles**:
+* Avoid memory allocation or deallocation in the middle of a run
+  - Use fixed size containers
+  - Allocate enough space for important data structures at the very beginning
+* Bulk allocate enough memory and manage it yourself
+  - Use an Object Pool/Ring Buffer/Circular Buffer
 
 
-### Object Pool
+
+### Reference
+* [On Building High Performance Systems](https://speice.io/2019/07/high-performance-systems.html)

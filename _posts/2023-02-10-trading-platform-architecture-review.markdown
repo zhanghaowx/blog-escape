@@ -84,6 +84,9 @@ The model calculates the option price as the sum of two components: the intrinsi
 
 In addition to their speed and efficiency, GPUs are also highly scalable and can be easily added to existing trading systems to increase processing power as needed. This allows trading firms to adapt to changing market conditions and to keep up with the increasing complexity of options trading.
 
+**Read More**:
+- [Options Pricing on the GPU](https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-45-options-pricing-gpu)
+
 ### Volatility Infrasturture - Retreat
 
 ## Basic Trading Strategies
@@ -143,12 +146,6 @@ Trading desks typically have several VAR limits. The first limit, a soft limit, 
   - Regulatory, legal and reputational risk
 * Global View: risk is a resource shared/allocated across desks to maximum revenue of the whole company
   - Risk limits could be allocated based on expected PnL
-
-
-### Software Low Latency Techniques - Ring/Circular Buffer
-
-
-### Software Low Latency Techniques - Object Pool
 
 
 ## Data Platform
